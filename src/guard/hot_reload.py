@@ -19,4 +19,12 @@ class ServicioGuardia:
         print(f"Defensa actualizada con el adaptador: {ruta_adaptador}")
         
         
-    
+    def es_seguro(self,prompt_usuario:str) -> bool:
+        """Clasifica si el prompt recibido es seguro o es un intento de jailbreak"""
+        entradas = self.tokenizador(f"<human>:{prompt_usuario}\n<bot>:", return_tensors="pt").to("cuda")
+        with torch.no_grad():
+            salida = self.modelo_activo.generate(**entradas,max_new_tokens=10)
+            
+        veredicto = self.tokenizador.decode(salida[0], skip_special_tokens=True)
+        
+        return "unsafe" not in veredicto.lower()        
