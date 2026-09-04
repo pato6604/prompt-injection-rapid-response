@@ -16,7 +16,7 @@ un paradigma de seguridad dinámico: tras detectar un nuevo patrón de
 ataque en producción, el sistema prolifera automáticamente variaciones
 sintéticas, entrena un adaptador de clasificación eficiente en
 parámetros (LoRA) y recarga la defensa en tiempo real sin interrumpir el
-servicio.
+servicio
 
 ``` text
 [ Petición Entrante de Usuario ]
