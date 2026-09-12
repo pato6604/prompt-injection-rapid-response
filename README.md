@@ -173,7 +173,7 @@ uvicorn src.server.app:app --host 0.0.0.0 --port 8000 --reload
 ## 📜 Citación y Agradecimientos
 
 Si utilizas este código o arquitectura en tus proyectos, por favor cita
-el paper original:
+el paper original
 
 ``` bibtex
 @article{peng2024rapidresponse,
